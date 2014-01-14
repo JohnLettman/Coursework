@@ -1,0 +1,92 @@
+
+!
+Version 12.3
+service timestamps debug uptime
+service timestamps log uptime
+service password-encryption
+!
+hostname brazil-r
+ip cef
+!
+enable secret cisco
+!
+!
+!
+!
+ip subnet-zero
+!
+no ip domain-lookup
+!
+!
+!
+!
+!
+!
+!
+!
+interface Serial0/0
+ description Serial Connection to Olean (DTE end)
+ ip address 211.78.0.14 255.255.255.252
+ no ip directed-broadcast
+!
+interface Serial0/1
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface Serial0/2
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface Serial0/3
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface FastEthernet0/0
+ description Ethernet Connection to Brazil Switch 1 (Trunking)
+ no ip address
+ no ip directed-broadcast
+!
+interface FastEthernet0/0.6
+ description VLAN for 193 Hosts
+ encapsulation dot1q 6
+ ip address 192.168.137.1 255.255.255.0
+!
+interface FastEthernet0/0.99
+ description Management VLAN for entire Brazil Network
+ encapsulation dot1q 99
+ ip address 192.168.149.1 255.255.255.0
+!
+!
+interface FastEthernet0/1
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+!
+!
+!
+!
+ip classless
+no ip http server
+!
+ip route 0.0.0.0 0.0.0.0 211.78.0.13
+!
+!
+!
+!
+!
+!
+banner motd ^C
+This is the Brazil Router - Authorized Access Only^C
+line con 0
+line aux 0
+line vty 0 4
+ login 
+ password cisco
+!
+no scheduler allocate
+end
+

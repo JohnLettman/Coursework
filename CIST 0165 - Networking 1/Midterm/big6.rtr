@@ -1,0 +1,83 @@
+
+!
+Version 12.3
+service timestamps debug uptime
+service timestamps log uptime
+service password-encryption
+!
+hostname paris
+ip cef
+!
+enable secret cisco
+!
+!
+!
+!
+ip subnet-zero
+!
+no ip domain-lookup
+!
+!
+!
+!
+!
+!
+!
+!
+interface Serial0/0
+ description Paris to London Connection NON-DCE
+ ip address 12.11.10.26 255.255.255.252
+ no ip directed-broadcast
+!
+interface Serial0/1
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface Serial0/2
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface Serial0/3
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface FastEthernet0/0
+ description Ethernet to 302 hosts
+ ip address 10.10.36.1 255.255.254.0
+ no ip directed-broadcast
+!
+interface FastEthernet0/1
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+!
+!
+!
+!
+ip classless
+no ip http server
+!
+ip route 0.0.0.0 0.0.0.0 12.11.10.25
+!
+!
+!
+!
+!
+!
+banner motd ^C
+This is the Paris router
+oui oui i am the frenchinator
+^C
+line con 0
+line aux 0
+line vty 0 4
+ login 
+ password cisco
+!
+no scheduler allocate
+end
+

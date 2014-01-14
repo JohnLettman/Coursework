@@ -1,0 +1,106 @@
+
+!
+Version 12.3
+service timestamps debug uptime
+service timestamps log uptime
+service password-encryption
+!
+hostname olean-r
+ip cef
+!
+enable secret cisco
+!
+!
+!
+!
+ip subnet-zero
+!
+no ip domain-lookup
+!
+!
+!
+!
+!
+!
+!
+!
+interface Serial0/0
+ description Serial Connection to Bradford (DTE end)
+ ip address 211.78.0.2 255.255.255.252
+ no ip directed-broadcast
+!
+interface Serial0/1
+ description Serial Connection to Brazil (DCE end)
+ ip address 211.78.0.13 255.255.255.252
+ no ip directed-broadcast
+ clock rate 1000000
+!
+interface Serial0/2
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface Serial0/3
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface FastEthernet0/0
+ description Ethernet Connection to Olean Switch 1 (Trunking)
+ no ip address
+ no ip directed-broadcast
+!
+interface FastEthernet0/0.8
+ description VLAN for 145 Hosts
+ encapsulation dot1q 8
+ ip address 192.168.139.1 255.255.255.0
+!
+interface FastEthernet0/0.99
+ description Management VLAN for Olean Switch 1's Network
+ encapsulation dot1q 99
+ ip address 192.168.148.1 255.255.255.0
+!
+!
+interface FastEthernet0/1
+ description Ethernet Connection to Olean Switch 2 (Trunking)
+ no ip address
+ no ip directed-broadcast
+!
+interface FastEthernet0/1.11
+ description VLAN for 51 Hosts
+ encapsulation dot1q 11
+ ip address 192.168.141.1 255.255.255.128
+!
+interface FastEthernet0/1.99
+ description Management VLAN for Olean Switch 2's Network
+ encapsulation dot1q 99
+ ip address 192.168.150.1 255.255.255.0
+!
+!
+!
+!
+!
+!
+ip classless
+no ip http server
+!
+ip route 0.0.0.0 0.0.0.0 211.78.0.1
+ip route 192.168.137.0 255.255.255.0 211.78.0.14
+ip route 192.168.149.0 255.255.255.0 211.78.0.14
+!
+!
+!
+!
+!
+!
+banner motd ^C
+This is the Olean Router - Authorized Access Only^C
+line con 0
+line aux 0
+line vty 0 4
+ login 
+ password cisco
+!
+no scheduler allocate
+end
+

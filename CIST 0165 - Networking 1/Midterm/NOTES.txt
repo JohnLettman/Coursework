@@ -1,0 +1,183 @@
+John Lettman and Christopher Meletiche-Velez
+
+WANs - 12.11.10.0/24
+LANs - 10.10.32.0/19
+
+
+
+WANs
+---------------------------------------
+
+NOTES:
+ALL WANS HAVE A MASK OF 255.255.255.252
+ALL IN FORM OF:
+
+[SOURCE] -> [DESTINATION]
+IP OF SOURCE INTERFACE
+
+
+
+Tokyo -> Olean
+IP: 12.11.10.1
+
+
+Atlanta -> Olean
+IP: 12.11.10.5
+
+
+Olean -> Tokyo
+IP: 12.11.10.1
+
+
+Olean -> Atlanta
+IP: 12.11.10.6
+
+
+Olean -> Bradford
+IP: 12.11.10.9
+
+
+Bradford -> Olean
+IP: 12.11.10.10
+
+
+Bradford -> Singapore
+IP: 12.11.10.13
+
+
+Bradford -> London
+IP: 12.11.10.17
+
+
+Singapore -> Bradford
+IP: 12.11.10.14
+
+
+Singapore -> Sydney
+IP: 12.11.10.21
+
+
+London -> Bradford
+IP: 12.11.10.18
+
+
+London -> Paris
+IP: 12.11.10.25
+
+
+Sydney -> Singapore
+IP: 12.11.10.22
+
+
+Paris -> London
+IP: 12.11.10.26
+
+
+LANs
+--------------------------------------------
+
+NOTES:
+ENCLOSED IN () = DEFAULT GATEWAY IP
+
+
+
+620 [BRADFORD]
+(10.10.32.1)
+IP:	10.10.32.2
+MASK:	255.255.252.0
+
+
+302 [PARIS]
+(10.10.36.1)
+IP:	10.10.36.2
+MASK:	255.255.254.0
+
+
+207 [OLEAN]
+(10.10.38.1)
+IP:	10.10.38.2
+MASK:	255.255.255.0
+
+
+200 [OLEAN]
+(10.10.39.1)
+IP:	10.10.39.2
+MASK:	255.255.255.0
+
+
+195 [ATLANTA]
+(10.10.40.1)
+IP:	10.10.40.2
+MASK:	255.255.255.0
+
+
+180 [LONDON]
+(10.10.41.1)
+IP:	10.10.41.2
+MASK:	255.255.255.0
+
+
+162 [SINGAPORE]
+(10.10.42.1)
+IP:	10.10.42.2
+MASK:	255.255.255.0
+
+
+128 [BRADFORD]
+(10.10.43.1)
+IP:	10.10.43.2
+MASK:	255.255.255.0
+
+
+126 [TOKYO]
+(10.10.44.1)
+IP:	10.10.44.2
+MASK:	255.255.255.0
+
+
+125 [SYDNEY]
+(10.10.45.1)
+IP:	10.10.45.2
+MASK:	255.255.255.128
+
+
+
+ROUTES
+-----------------------------------------------------
+
+* = default route
+
+
+OLEAN:
+	ip route 0.0.0.0 0.0.0.0 12.11.10.10			(* BRADFORD)
+	ip route 10.10.44.0 255.255.255.0 12.11.10.1		(TOKYO)
+	ip route 10.10.40.0 255.255.255.0 12.11.10.5		(ATLANTA)
+
+BRADFORD:
+	ip route 0.0.0.0 0.0.0.0 12.11.10.9			(* OLEAN)
+	ip route 10.10.41.0 255.255.255.0 12.11.10.18		(LONDON -> 180)
+	ip route 10.10.36.0 255.255.254.0 12.11.10.18		(LONDON -> PARIS -> 302)
+	ip route 10.10.42.0 255.255.255.0 12.11.10.14		(SINGAPORE -> 162)
+	ip route 10.10.45.0 255.255.255.128 12.11.10.14		(SINGAPORE -> SYDNEY -> 125)
+	ip route 12.11.10.20 255.255.255.252 12.11.10.14	(SINGAPORE/SYDNEY)
+	ip route 12.11.10.24 255.255.255.252 12.11.10.18	(LONDON/PARIS)
+
+SINGAPORE:
+	ip route 0.0.0.0 0.0.0.0 12.11.10.13 			(* BRADFORD)
+	ip route 10.10.45.0 255.255.255.128 12.11.10.22 	(SINGAPORE/SYDNEY)
+
+LONDON:
+	ip route 0.0.0.0 0.0.0.0 12.11.10.17 			(* BRADFORD)
+	ip route 10.10.36.0 255.255.254.0 12.11.10.26 		(LONDON/PARIS)
+
+SYDNEY:
+	ip route 0.0.0.0 0.0.0.0 12.11.10.21 			(* SINGAPORE)
+
+PARIS:
+	ip route 0.0.0.0 0.0.0.0 12.11.10.25 			(* LONDON)
+
+TOKYO:
+	ip route 0.0.0.0 0.0.0.0 12.11.10.2 			(* OLEAN)
+
+ATLANTA:
+	ip route 0.0.0.0 0.0.0.0 12.11.10.6 			(* OLEAN)

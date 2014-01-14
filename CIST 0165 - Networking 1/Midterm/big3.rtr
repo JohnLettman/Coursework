@@ -1,0 +1,85 @@
+
+!
+Version 12.3
+service timestamps debug uptime
+service timestamps log uptime
+service password-encryption
+!
+hostname singapore
+ip cef
+!
+enable secret cisco
+!
+!
+!
+!
+ip subnet-zero
+!
+no ip domain-lookup
+!
+!
+!
+!
+!
+!
+!
+!
+interface Serial0/0
+ description Singapore to Bradford Connection NON-DCE
+ ip address 12.11.10.14 255.255.255.252
+ no ip directed-broadcast
+!
+interface Serial0/1
+ description Singapore to Sydney Connection DCE
+ ip address 12.11.10.21 255.255.255.252
+ no ip directed-broadcast
+ clock rate 1000000
+!
+interface Serial0/2
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface Serial0/3
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface FastEthernet0/0
+ description Ethernet to 162 hosts
+ ip address 10.10.42.1 255.255.255.0
+ no ip directed-broadcast
+!
+interface FastEthernet0/1
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+!
+!
+!
+!
+ip classless
+no ip http server
+!
+ip route 0.0.0.0 0.0.0.0 12.11.10.13
+ip route 10.10.45.0 255.255.255.128 12.11.10.22
+!
+!
+!
+!
+!
+!
+banner motd ^C
+This is the Singapore router
+i am legend
+^C
+line con 0
+line aux 0
+line vty 0 4
+ login 
+ password cisco
+!
+no scheduler allocate
+end
+

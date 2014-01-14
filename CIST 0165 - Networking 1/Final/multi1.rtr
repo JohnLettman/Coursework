@@ -1,0 +1,120 @@
+
+!
+Version 12.3
+service timestamps debug uptime
+service timestamps log uptime
+service password-encryption
+!
+hostname bradford-r
+ip cef
+!
+enable secret cisco
+!
+!
+!
+!
+ip subnet-zero
+!
+no ip domain-lookup
+!
+!
+!
+!
+!
+!
+!
+!
+interface Serial0/0
+ description Serial Connection to ISP (DTE end)
+ ip address 211.78.0.25 255.255.255.252
+ no ip directed-broadcast
+!
+interface Serial0/1
+ description Serial Connection to Olean (DCE end)
+ ip address 211.78.0.1 255.255.255.252
+ no ip directed-broadcast
+ clock rate 1000000
+!
+interface Serial0/2
+ description Serial Connection to Pittsburgh (DCE end)
+ ip address 211.78.0.5 255.255.255.252
+ no ip directed-broadcast
+ clock rate 1000000
+!
+interface Serial0/3
+ description Serial Connection to London (DCE end)
+ ip address 211.78.0.9 255.255.255.252
+ no ip directed-broadcast
+ clock rate 1000000
+!
+interface FastEthernet0/0
+ description Ethernet Connection to Bradford Switch 1 (Trunking)
+ no ip address
+ no ip directed-broadcast
+!
+interface FastEthernet0/0.2
+ description VLAN for 269 Hosts
+ encapsulation dot1q 2
+ ip address 192.168.132.1 255.255.254.0
+!
+interface FastEthernet0/0.4
+ description VLAN for 201 Hosts
+ encapsulation dot1q 4
+ ip address 192.168.135.1 255.255.255.0
+!
+interface FastEthernet0/0.10
+ description VLAN for 76 Hosts
+ encapsulation dot1q 10
+ ip address 192.168.140.129 255.255.255.128
+!
+interface FastEthernet0/0.99
+ description Management VLAN Connection for entire Bradford LAN
+ encapsulation dot1q 99
+ ip address 192.168.143.1 255.255.255.0
+!
+!
+interface FastEthernet0/1
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+!
+!
+!
+!
+ip classless
+no ip http server
+!
+ip route 0.0.0.0 0.0.0.0 211.78.0.26
+ip route 192.168.137.0 255.255.255.0 211.78.0.2
+ip route 192.168.141.0 255.255.255.128 211.78.0.2
+ip route 192.168.139.0 255.255.255.0 211.78.0.2
+ip route 192.168.150.0 255.255.255.0 211.78.0.2
+ip route 192.168.128.0 255.255.252.0 211.78.0.6
+ip route 192.168.138.0 255.255.255.0 211.78.0.6
+ip route 192.168.136.0 255.255.255.0 211.78.0.10
+ip route 192.168.134.0 255.255.255.0 211.78.0.10
+ip route 192.168.140.0 255.255.255.128 211.78.0.10
+ip route 192.168.148.0 255.255.255.0 211.78.0.2
+ip route 192.168.149.0 255.255.255.0 211.78.0.2
+ip route 192.168.147.0 255.255.255.0 211.78.0.6
+ip route 192.168.144.0 255.255.255.0 211.78.0.10
+ip route 192.168.145.0 255.255.255.0 211.78.0.10
+ip route 192.168.146.0 255.255.255.0 211.78.0.10
+!
+!
+!
+!
+!
+!
+banner motd ^C
+This is the Bradford Router - Authorized Access Only^C
+line con 0
+line aux 0
+line vty 0 4
+ login 
+ password cisco
+!
+no scheduler allocate
+end
+

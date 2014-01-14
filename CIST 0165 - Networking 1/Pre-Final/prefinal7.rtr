@@ -1,0 +1,100 @@
+
+!
+Version 12.3
+service timestamps debug uptime
+service timestamps log uptime
+no service password-encryption
+!
+hostname Bradford-SW1
+ip cef
+!
+!
+!
+!
+!
+ip subnet-zero
+!
+no ip domain-lookup
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+!
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/1
+ switchport access vlan 10
+!
+interface FastEthernet0/2
+!
+interface FastEthernet0/3
+!
+interface FastEthernet0/4
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface GigabitEthernet0/1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface GigabitEthernet0/2
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+!
+vtp mode Server
+vtp domain NULL
+!
+interface Vlan 1
+ no ip address
+ no ip route-cache
+!
+interface Vlan0099
+ ip address 10.0.99.2 255.255.255.0
+ no ip route-cache
+ no shutdown
+!
+vlan 10 name VLAN0010
+vlan 13 name VLAN0013
+vlan 19 name VLAN0019
+vlan 99 name VLAN0099
+!
+ip default-gateway 10.0.99.1
+!
+!
+ip classless
+no ip http server
+!
+ip route 0.0.0.0 0.0.0.0 10.0.99.1
+!
+!
+!
+!
+!
+!
+line con 0
+line aux 0
+line vty 0 4
+ login 
+ password cisco
+!
+no scheduler allocate
+end
+

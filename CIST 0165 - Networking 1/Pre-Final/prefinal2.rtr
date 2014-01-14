@@ -1,0 +1,94 @@
+
+!
+Version 12.3
+service timestamps debug uptime
+service timestamps log uptime
+no service password-encryption
+!
+hostname Bradford-R
+ip cef
+!
+!
+!
+!
+!
+ip subnet-zero
+!
+no ip domain-lookup
+!
+!
+!
+!
+!
+!
+!
+!
+interface Serial0/0
+ ip address 10.10.1.1 255.255.255.252
+ no ip directed-broadcast
+!
+interface Serial0/1
+ ip address 10.10.0.2 255.255.255.252
+ no ip directed-broadcast
+ clock rate 1000000
+!
+interface Serial0/2
+ ip address 10.10.2.2 255.255.255.252
+ no ip directed-broadcast
+ clock rate 1000000
+!
+interface Serial0/3
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface FastEthernet0/0
+ no ip address
+ no ip directed-broadcast
+!
+interface FastEthernet0/0.13
+ encapsulation dot1q 13
+ ip address 10.0.0.1 255.255.255.0
+!
+interface FastEthernet0/0.19
+ encapsulation dot1q 19
+ ip address 10.0.1.1 255.255.255.0
+!
+interface FastEthernet0/0.10
+ encapsulation dot1q 10
+ ip address 10.0.2.1 255.255.255.0
+!
+interface FastEthernet0/0.99
+ encapsulation dot1q 99
+ ip address 10.0.99.1 255.255.255.0
+!
+!
+interface FastEthernet0/1
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+!
+!
+!
+!
+ip classless
+no ip http server
+!
+ip route 10.1.0.0 255.255.255.0 10.10.2.2
+ip route 10.1.1.0 255.255.255.0 10.10.2.2
+ip route 10.2.0.0 255.255.255.0 10.10.0.2
+ip route 10.2.1.0 255.255.255.0 10.10.0.2
+!
+!
+!
+!
+!
+!
+line con 0
+line aux 0
+line vty 0 4
+!
+no scheduler allocate
+end
+

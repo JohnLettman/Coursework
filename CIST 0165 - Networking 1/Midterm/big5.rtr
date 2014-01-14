@@ -1,0 +1,83 @@
+
+!
+Version 12.3
+service timestamps debug uptime
+service timestamps log uptime
+service password-encryption
+!
+hostname sydney
+ip cef
+!
+enable secret cisco
+!
+!
+!
+!
+ip subnet-zero
+!
+no ip domain-lookup
+!
+!
+!
+!
+!
+!
+!
+!
+interface Serial0/0
+ description Sydney to Singapore Connection NON-DCE
+ ip address 12.11.10.22 255.255.255.252
+ no ip directed-broadcast
+!
+interface Serial0/1
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface Serial0/2
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface Serial0/3
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface FastEthernet0/0
+ description Ethernet to 125 hosts
+ ip address 10.10.45.1 255.255.255.128
+ no ip directed-broadcast
+!
+interface FastEthernet0/1
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+!
+!
+!
+!
+ip classless
+no ip http server
+!
+ip route 0.0.0.0 0.0.0.0 12.11.10.21
+!
+!
+!
+!
+!
+!
+banner motd ^C
+This is the Sydney router
+would you like to hear about the lord and savior jesus christ - morman guy
+^C
+line con 0
+line aux 0
+line vty 0 4
+ login 
+ password cisco
+!
+no scheduler allocate
+end
+

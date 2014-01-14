@@ -1,0 +1,102 @@
+
+!
+Version 12.3
+service timestamps debug uptime
+service timestamps log uptime
+service password-encryption
+!
+hostname london-sw1
+ip cef
+!
+enable secret cisco
+!
+!
+!
+!
+ip subnet-zero
+!
+no ip domain-lookup
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+!
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/1
+ description Ethernet Connection to 199 Hosts (VLAN 5)
+ switchport mode access
+ switchport access vlan 5
+!
+interface FastEthernet0/2
+!
+interface FastEthernet0/3
+!
+interface FastEthernet0/4
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface GigabitEthernet0/1
+ description Ethernet Connection to London Router (Trunking)
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface GigabitEthernet0/2
+!
+!
+vtp mode Server
+vtp domain NULL
+!
+interface Vlan 1
+ no ip address
+ no ip route-cache
+!
+interface Vlan0099
+ ip address 192.168.144.2 255.255.255.0
+ no ip route-cache
+ no shutdown
+!
+vlan 5 name VLAN0005
+!
+ip default-gateway 192.168.144.1
+!
+!
+ip classless
+no ip http server
+!
+ip route 0.0.0.0 0.0.0.0 192.168.144.1
+ip route 0.0.0.0 0.0.0.0 192.168.143.4
+!
+!
+!
+!
+!
+!
+banner motd ^C
+This is the London Switch 1 - Authorized Access Only^C
+line con 0
+line aux 0
+line vty 0 4
+ login 
+ password cisco
+!
+no scheduler allocate
+end
+

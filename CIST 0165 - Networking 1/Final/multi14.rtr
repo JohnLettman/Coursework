@@ -1,0 +1,102 @@
+
+!
+Version 12.3
+service timestamps debug uptime
+service timestamps log uptime
+service password-encryption
+!
+hostname pitt-sw2
+ip cef
+!
+enable secret cisco
+!
+!
+!
+!
+ip subnet-zero
+!
+no ip domain-lookup
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+!
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/1
+ description Ethernet Connection to 177 Hosts (VLAN 7)
+ switchport mode access
+ switchport access vlan 7
+!
+interface FastEthernet0/2
+!
+interface FastEthernet0/3
+!
+interface FastEthernet0/4
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface GigabitEthernet0/1
+ description Ethernet Connection to Pitt Switch 1 (Trunking)
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface GigabitEthernet0/2
+!
+!
+vtp mode Server
+vtp domain NULL
+!
+interface Vlan 1
+ no ip address
+ no ip route-cache
+!
+interface Vlan0099
+ ip address 192.168.147.3 255.255.255.0
+ no ip route-cache
+ no shutdown
+!
+vlan 7 name VLAN0007
+!
+ip default-gateway 192.168.147.1
+!
+!
+ip classless
+no ip http server
+!
+ip route 0.0.0.0 0.0.0.0 192.168.147.1
+ip route 0.0.0.0 0.0.0.0 192.168.143.3
+!
+!
+!
+!
+!
+!
+banner motd ^C
+This is the Pitt Switch 2 - Authorized Access Only^C
+line con 0
+line aux 0
+line vty 0 4
+ login 
+ password cisco
+!
+no scheduler allocate
+end
+

@@ -1,0 +1,98 @@
+
+!
+Version 12.3
+service timestamps debug uptime
+service timestamps log uptime
+service password-encryption
+!
+hostname pittsburgh-r
+ip cef
+!
+enable secret cisco
+!
+!
+!
+!
+ip subnet-zero
+!
+no ip domain-lookup
+!
+!
+!
+!
+!
+!
+!
+!
+interface Serial0/0
+ description Serial Connection to Bradford (DTE end)
+ ip address 211.78.0.6 255.255.255.252
+ no ip directed-broadcast
+!
+interface Serial0/1
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface Serial0/2
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface Serial0/3
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface FastEthernet0/0
+ description Ethernet Connection to Pitt Switch 1 (Trunking)
+ no ip address
+ no ip directed-broadcast
+!
+interface FastEthernet0/0.1
+ description VLAN for 510 Hosts
+ encapsulation dot1q 1
+ ip address 192.168.128.1 255.255.252.0
+!
+interface FastEthernet0/0.7
+ description VLAN for 177 Hosts
+ encapsulation dot1q 7
+ ip address 192.168.138.1 255.255.255.0
+!
+interface FastEthernet0/0.99
+ description Management VLAN for entire Pitt Network
+ encapsulation dot1q 99
+ ip address 192.168.147.1 255.255.255.0
+!
+!
+interface FastEthernet0/1
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+!
+!
+!
+!
+ip classless
+no ip http server
+!
+ip route 0.0.0.0 0.0.0.0 211.78.0.5
+!
+!
+!
+!
+!
+!
+banner motd ^C
+This is the Pittsburgh Router - Authorized Access Only
+^C
+line con 0
+line aux 0
+line vty 0 4
+ login 
+ password cisco
+!
+no scheduler allocate
+end
+

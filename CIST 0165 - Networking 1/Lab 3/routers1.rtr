@@ -1,0 +1,75 @@
+
+!
+Version 12.3
+service timestamps debug uptime
+service timestamps log uptime
+service password-encryption
+!
+hostname Router1
+enable secret cisco
+enable password boson
+!
+!
+username MyName password cisco
+!
+!
+!
+ip subnet-zero
+!
+no ip domain-lookup
+!
+!
+!
+!
+!
+!
+!
+!
+interface Serial0/0/0
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface Serial0/0/1
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface FastEthernet0/0
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface FastEthernet0/1
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+!
+!
+!
+!
+ip classless
+no ip http server
+!
+!
+!
+!
+!
+!
+!
+banner login ^C
+You must be an authorized user to access this device ^C
+banner motd ^C
+This device is used to route traffic between departments ^C
+line con 0
+ login local
+ password cisco
+line aux 0
+line vty 0 4
+ login 
+ password cisco
+!
+no scheduler allocate
+end
+

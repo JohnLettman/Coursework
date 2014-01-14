@@ -1,0 +1,26 @@
+C:\Users\kwang\Dropbox\Fall 2013\CIST 0150\Exam 1\PizzaStore\PizzaShop\PizzaShop\bin\Debug\PizzaShop.exe.config
+C:\Users\kwang\Dropbox\Fall 2013\CIST 0150\Exam 1\PizzaStore\PizzaShop\PizzaShop\bin\Debug\PizzaShop.exe
+C:\Users\kwang\Dropbox\Fall 2013\CIST 0150\Exam 1\PizzaStore\PizzaShop\PizzaShop\bin\Debug\PizzaShop.pdb
+C:\Users\kwang\Dropbox\Fall 2013\CIST 0150\Exam 1\PizzaStore\PizzaShop\PizzaShop\obj\Debug\PizzaShop.csprojResolveAssemblyReference.cache
+C:\Users\kwang\Dropbox\Fall 2013\CIST 0150\Exam 1\PizzaStore\PizzaShop\PizzaShop\obj\Debug\PizzaShop.Form1.resources
+C:\Users\kwang\Dropbox\Fall 2013\CIST 0150\Exam 1\PizzaStore\PizzaShop\PizzaShop\obj\Debug\PizzaShop.Properties.Resources.resources
+C:\Users\kwang\Dropbox\Fall 2013\CIST 0150\Exam 1\PizzaStore\PizzaShop\PizzaShop\obj\Debug\PizzaShop.csproj.GenerateResource.Cache
+C:\Users\kwang\Dropbox\Fall 2013\CIST 0150\Exam 1\PizzaStore\PizzaShop\PizzaShop\obj\Debug\PizzaShop.exe
+C:\Users\kwang\Dropbox\Fall 2013\CIST 0150\Exam 1\PizzaStore\PizzaShop\PizzaShop\obj\Debug\PizzaShop.pdb
+c:\Users\kwang\Dropbox\Fall 2013\CIST 0150\Exam 1\PizzaStore\Exam1PizzaShop\PizzaShop\bin\Debug\PizzaShop.exe.config
+c:\Users\kwang\Dropbox\Fall 2013\CIST 0150\Exam 1\PizzaStore\Exam1PizzaShop\PizzaShop\obj\Debug\PizzaShop.exe
+c:\Users\kwang\Dropbox\Fall 2013\CIST 0150\Exam 1\PizzaStore\Exam1PizzaShop\PizzaShop\obj\Debug\PizzaShop.pdb
+c:\Users\kwang\Dropbox\Fall 2013\CIST 0150\Exam 1\PizzaStore\Exam1PizzaShop\PizzaShop\obj\Debug\PizzaShop.Form1.resources
+c:\Users\kwang\Dropbox\Fall 2013\CIST 0150\Exam 1\PizzaStore\Exam1PizzaShop\PizzaShop\obj\Debug\PizzaShop.Properties.Resources.resources
+c:\Users\kwang\Dropbox\Fall 2013\CIST 0150\Exam 1\PizzaStore\Exam1PizzaShop\PizzaShop\obj\Debug\PizzaShop.csproj.GenerateResource.Cache
+c:\Users\kwang\Dropbox\Fall 2013\CIST 0150\Exam 1\PizzaStore\Exam1PizzaShop\PizzaShop\bin\Debug\PizzaShop.exe
+c:\Users\kwang\Dropbox\Fall 2013\CIST 0150\Exam 1\PizzaStore\Exam1PizzaShop\PizzaShop\bin\Debug\PizzaShop.pdb
+Z:\CIST 0150 - FUNDAMENTALS OF PROGRAMMING\Exam1PizzaShop\Exam1PizzaShop\PizzaShop\bin\Debug\PizzaShop.exe.config
+Z:\CIST 0150 - FUNDAMENTALS OF PROGRAMMING\Exam1PizzaShop\Exam1PizzaShop\PizzaShop\bin\Debug\PizzaShop.exe
+Z:\CIST 0150 - FUNDAMENTALS OF PROGRAMMING\Exam1PizzaShop\Exam1PizzaShop\PizzaShop\bin\Debug\PizzaShop.pdb
+Z:\CIST 0150 - FUNDAMENTALS OF PROGRAMMING\Exam1PizzaShop\Exam1PizzaShop\PizzaShop\obj\Debug\PizzaShop.csprojResolveAssemblyReference.cache
+Z:\CIST 0150 - FUNDAMENTALS OF PROGRAMMING\Exam1PizzaShop\Exam1PizzaShop\PizzaShop\obj\Debug\PizzaShop.MainWindow.resources
+Z:\CIST 0150 - FUNDAMENTALS OF PROGRAMMING\Exam1PizzaShop\Exam1PizzaShop\PizzaShop\obj\Debug\PizzaShop.Properties.Resources.resources
+Z:\CIST 0150 - FUNDAMENTALS OF PROGRAMMING\Exam1PizzaShop\Exam1PizzaShop\PizzaShop\obj\Debug\PizzaShop.csproj.GenerateResource.Cache
+Z:\CIST 0150 - FUNDAMENTALS OF PROGRAMMING\Exam1PizzaShop\Exam1PizzaShop\PizzaShop\obj\Debug\PizzaShop.exe
+Z:\CIST 0150 - FUNDAMENTALS OF PROGRAMMING\Exam1PizzaShop\Exam1PizzaShop\PizzaShop\obj\Debug\PizzaShop.pdb
